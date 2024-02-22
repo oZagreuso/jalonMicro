@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./assets/js/main.js" type="module"></script>
+    <link rel="stylesheet" href="./assets/css/style.css">  
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo"></div>
+            <img src="./assets/img/banner.jpg"> 
+            <h1>List of the 9 CPU's manufactured On Mulhouse</h1>
+        </div>
+    </header>
+    <main>
+        <section id="app">
+            <div class="cpuz-item">        
+                <div class="micro" v-html="displayCpuzItems()"></div> 
+            </div>
+        </section>
+        <div class="form">
+            <form>
+                <div>
+                    <select v-model="selected" id="cpuzForm ">
+                        <option v-for="cpuz in cpuzList" v-bind:value="{{cpuz.nomModele}}"></option>
+                    </select>
+                </div>
+            </form>
+        </div>
+
+    </main>
+    
+</body>
+</html>

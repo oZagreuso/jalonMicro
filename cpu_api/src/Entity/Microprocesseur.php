@@ -42,6 +42,9 @@ class Microprocesseur
     #[ORM\Column(type: Types::DECIMAL, precision: 5, scale: 0)]
     private ?string $prix = null;
 
+    #[ORM\Column(nullable: true)]
+    private ?int $stock = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -103,6 +106,18 @@ class Microprocesseur
     public function setPrix(string $prix): static
     {
         $this->prix = $prix;
+
+        return $this;
+    }
+
+    public function getStock(): ?int
+    {
+        return $this->stock;
+    }
+
+    public function setStock(?int $stock): static
+    {
+        $this->stock = $stock;
 
         return $this;
     }
